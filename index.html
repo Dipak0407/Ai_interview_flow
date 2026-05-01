@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Interview Coach - Mobile Screens</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #eef4ff;
+      --bg-2: #f8fbff;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --primary: #175cff;
+      --primary-dark: #003ea8;
+      --card: rgba(255,255,255,.82);
+      --border: rgba(30, 64, 175, .12);
+      --shadow: 0 22px 70px rgba(15, 23, 42, .14);
+      --phone-w: 390px;
+      --phone-h: 844px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(23, 92, 255, .20), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(14, 165, 233, .14), transparent 32%),
+        linear-gradient(135deg, var(--bg), var(--bg-2));
+      min-height: 100vh;
+    }
+
+    .hero {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 46px 20px 24px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(23, 92, 255, .10);
+      border: 1px solid rgba(23, 92, 255, .18);
+      color: var(--primary-dark);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 16px auto 0;
+      color: var(--muted);
+      font-size: clamp(15px, 2vw, 18px);
+      line-height: 1.65;
+    }
+
+    .toolbar {
+      /* position: sticky; */
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(238, 244, 255, .82);
+      border-top: 1px solid rgba(255,255,255,.8);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .toolbar-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+
+    .tab {
+      flex: 0 0 auto;
+      text-decoration: none;
+      color: #334155;
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--border);
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 8px 24px rgba(15,23,42,.05);
+    }
+
+    .tab:hover { background: #fff; color: var(--primary-dark); }
+
+    .actions { display: flex; gap: 10px; }
+    .btn {
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 800;
+      font-size: 13px;
+      color: white;
+      background: var(--primary);
+      box-shadow: 0 14px 28px rgba(23, 92, 255, .24);
+    }
+    .btn.secondary {
+      color: var(--primary-dark);
+      background: white;
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .screens {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 34px 20px 70px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 34px;
+      align-items: start;
+    }
+
+    .screen-card {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,.9);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .screen-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .screen-title { margin: 0; font-size: 18px; font-weight: 900; letter-spacing: -0.025em; }
+    .screen-subtitle { margin: 4px 0 0; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .screen-no {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      background: #e7efff;
+      color: var(--primary-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      border: 1px solid rgba(23, 92, 255, .13);
+    }
+
+    .phone-shell {
+      width: min(100%, var(--phone-w));
+      aspect-ratio: 390 / 844;
+      margin: 0 auto;
+      border-radius: 48px;
+      padding: 12px;
+      background: linear-gradient(145deg, #0b1224, #263451);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.10),
+        0 28px 60px rgba(15,23,42,.26);
+      position: relative;
+    }
+
+    .phone-shell::before {
+      content: "";
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 112px;
+      height: 27px;
+      border-radius: 999px;
+      background: #050816;
+      z-index: 3;
+      box-shadow: inset 0 -1px 0 rgba(255,255,255,.08);
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 38px;
+      background: white;
+      position: relative;
+    }
+  
+
+    iframe {
+      width: var(--phone-w);
+      height: var(--phone-h);
+      border: none;
+      transform-origin: top left;
+      display: block;
+    }
+
+    .phone-screen iframe {
+      transform: scale(var(--scale, 1));
+    }
+
+    .focus-view .screens {
+      max-width: 1120px;
+      grid-template-columns: 1fr;
+    }
+    .focus-view .screen-card {
+      display: grid;
+      grid-template-columns: minmax(330px, 430px) 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .focus-view .screen-head { margin-bottom: 0; align-self: start; }
+    .focus-view .screen-title { font-size: 26px; }
+    .focus-view .screen-subtitle { font-size: 14px; line-height: 1.55; max-width: 360px; }
+
+    @media (max-width: 860px) {
+      .toolbar-inner { justify-content: center; }
+      .actions { width: 100%; justify-content: center; }
+      .screens { grid-template-columns: 1fr; padding-inline: 14px; }
+      .screen-card { padding: 16px; border-radius: 26px; }
+      .focus-view .screen-card { display: block; }
+      .focus-view .screen-head { margin-bottom: 18px; }
+    }
+
+    @media (max-width: 430px) {
+      :root { --phone-w: 360px; --phone-h: 779px; }
+      .hero { padding-top: 32px; }
+      .screen-head { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="badge">AI Interview Coach · Mobile App Screens</div>
+    <h1>Complete app flow in realistic mobile frames</h1>
+    <!-- <p>All 12 HTML screens are arranged as a clean presentation board. The live interview screen keeps the app’s main experience prominent, with the AI interviewer and user video-frame concept.</p> -->
+  </header>
+
+  <nav class="toolbar">
+    <div class="toolbar-inner">
+      <div class="tabs" aria-label="Screen navigation">
+        <a class="tab" href="#screen-1">1 Splash</a>
+        <a class="tab" href="#screen-2">2 Login</a>
+        <a class="tab" href="#screen-3">3 Dashboard</a>
+        <a class="tab" href="#screen-4">4 Categories</a>
+        <a class="tab" href="#screen-5">5 Interviewer</a>
+        <a class="tab" href="#screen-6">6 Live Interview</a>
+        <a class="tab" href="#screen-7">7 Completed</a>
+        <a class="tab" href="#screen-8">8 Result</a>
+        <a class="tab" href="#screen-9">9 History</a>
+        <a class="tab" href="#screen-10">10 Report</a>
+        <a class="tab" href="#screen-11">11 Profile</a>
+        <a class="tab" href="#screen-12">12 Settings</a>
+      </div>
+      <div class="actions">
+        <button class="btn secondary" type="button" onclick="document.body.classList.remove('focus-view')">Grid View</button>
+        <button class="btn" type="button" onclick="document.body.classList.add('focus-view')">Presentation View</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="screens">
+    <section class="screen-card" id="screen-1">
+      <div class="screen-head"><div><h2 class="screen-title">Splash Screen</h2><p class="screen-subtitle">App entry with brand name and get-started CTA.</p></div><div class="screen-no">01</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="splash_screen/code.html" title="Splash Screen"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-2">
+      <div class="screen-head"><div><h2 class="screen-title">Login / Signup</h2><p class="screen-subtitle">Simple authentication screen for new and returning users.</p></div><div class="screen-no">02</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="login_signup/code.html" title="Login Signup Screen"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-3">
+      <div class="screen-head"><div><h2 class="screen-title">Home Dashboard</h2><p class="screen-subtitle">Main dashboard with start interview and quick navigation cards.</p></div><div class="screen-no">03</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="home_dashboard/code.html" title="Home Dashboard"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-4">
+      <div class="screen-head"><div><h2 class="screen-title">Categories</h2><p class="screen-subtitle">Interview categories such as UPSC, IT, HR and government jobs.</p></div><div class="screen-no">04</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="categories/code.html" title="Categories Screen"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-5">
+      <div class="screen-head"><div><h2 class="screen-title">AI Interviewer Selection</h2><p class="screen-subtitle">Male and female AI model selection before starting the interview.</p></div><div class="screen-no">05</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="ai_interviewer_selection/code.html" title="AI Interviewer Selection"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-6">
+      <div class="screen-head"><div><h2 class="screen-title">Live Interview</h2><p class="screen-subtitle">Main experience: realistic AI interview call with user frame, timer, question and controls.</p></div><div class="screen-no">06</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="live_interview/code.html" title="Live Interview Screen"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-7">
+      <div class="screen-head"><div><h2 class="screen-title">Interview Completed</h2><p class="screen-subtitle">Success screen after interview ends.</p></div><div class="screen-no">07</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="interview_completed/code.html" title="Interview Completed"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-8">
+      <div class="screen-head"><div><h2 class="screen-title">Result / Feedback</h2><p class="screen-subtitle">Score, mistakes and improvement tips in simple readable format.</p></div><div class="screen-no">08</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="result_feedback/code.html" title="Result Feedback"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-9">
+      <div class="screen-head"><div><h2 class="screen-title">History</h2><p class="screen-subtitle">Past interview attempts with category, date and score.</p></div><div class="screen-no">09</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="history/code.html" title="History Screen"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-10">
+      <div class="screen-head"><div><h2 class="screen-title">Report Detail</h2><p class="screen-subtitle">Detailed summary with performance report and improvement areas.</p></div><div class="screen-no">10</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="report_detail/code.html" title="Report Detail"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-11">
+      <div class="screen-head"><div><h2 class="screen-title">Profile</h2><p class="screen-subtitle">User details, account controls and profile actions.</p></div><div class="screen-no">11</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="profile_screen/code.html" title="Profile Screen"></iframe></div></div>
+    </section>
+
+    <section class="screen-card" id="screen-12">
+      <div class="screen-head"><div><h2 class="screen-title">Settings</h2><p class="screen-subtitle">Basic app settings such as dark mode, notifications and language.</p></div><div class="screen-no">12</div></div>
+      <div class="phone-shell"><div class="phone-screen"><iframe src="settings_screen/code.html" title="Settings Screen"></iframe></div></div>
+    </section>
+  </main>
+
+  <script>
+    function setFrameScale() {
+      document.querySelectorAll('.phone-screen').forEach(screen => {
+        const shellWidth = screen.clientWidth;
+        const scale = shellWidth / 390;
+        screen.style.setProperty('--scale', scale);
+      });
+    }
+    window.addEventListener('resize', setFrameScale);
+    window.addEventListener('load', setFrameScale);
+    setFrameScale();
+  </script>
+</body>
+</html>

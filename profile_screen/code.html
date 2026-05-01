@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#e5eeff",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary-fixed": "#dbe4ea",
+                    "surface-container-highest": "#d3e4fe",
+                    "outline-variant": "#c3c6d7",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "surface": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#e9f2f8",
+                    "on-primary-container": "#eeefff",
+                    "inverse-primary": "#b4c5ff",
+                    "secondary": "#565e74",
+                    "on-background": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#131b2e",
+                    "surface-tint": "#0053db",
+                    "outline": "#737686",
+                    "primary": "#004ac6",
+                    "tertiary": "#4e565b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "background": "#f8f9ff",
+                    "tertiary-container": "#666f74",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#141d21",
+                    "secondary-fixed": "#dae2fd",
+                    "on-surface": "#0b1c30",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface-variant": "#434655",
+                    "secondary-container": "#dae2fd",
+                    "primary-container": "#2563eb",
+                    "inverse-surface": "#213145",
+                    "on-secondary-container": "#5c647a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "surface-variant": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "container-margin": "20px",
+                    "xxl": "64px",
+                    "xl": "40px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "body-md": ["Manrope"],
+                    "headline-lg": ["Space Grotesk"],
+                    "label-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .profile-shadow {
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface min-h-screen text-on-surface selection:bg-primary-fixed">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 z-50 w-full bg-white/70 backdrop-blur-xl border-b border-slate-100 flex justify-between items-center px-5 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-600" data-icon="menu">menu</span>
+<h1 class="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-blue-600">Interview AI</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional studio portrait of a mid-30s male professional with a warm, confident expression. The lighting is soft and flattering, typical of high-end corporate photography. The background is a clean, out-of-focus modern office environment with hints of soft blue and white tones. The overall aesthetic is polished, trustworthy, and minimal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHirr_nvjT2172yRbWlS8ZcciNlNpfTjdcFBaHwIw275NdIYnL5zlopnKBW3sXUZKWONfWnDAS5qgVvAJTxNMRPYudSfxDGR5mKjew0Z68tqw1NaaJ6NZ_WLJaOaTnqdFD94SE2pWcVMyfGhhLAZl8_tKsOGbrJhmqTj-h5dwNyQgT6i-LctGL0C5n-VFP03qi2K4GjTEhPI5QdCEpVuIWsedB9YJAchk3K8AHZU86VIvZs72zIoNZAlpmI9-Uto4Dh8EsqZU4A7On"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-margin max-w-2xl mx-auto">
+<!-- Profile Header Section -->
+<section class="flex flex-col items-center mb-xl">
+<div class="relative mb-md">
+<div class="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-xl">
+<img alt="Alex Chen" class="w-full h-full object-cover" data-alt="A detailed close-up portrait of a professional man with short dark hair and a friendly demeanor. He is wearing a light blue oxford shirt, standing in front of a brightly lit, minimalist architectural space. The image has a clean, high-key lighting style that emphasizes clarity and human warmth, consistent with an empathetic technology brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLlxiSY0sA9L6Cj6vpUs4R1IQIwXM9goBJrah-o7_-lfVr3U-33CJ6jbnFHGkppXWxF7IuotKGDEc0T8IjdcwmIcOgTUHBRkLmAH15uY1HfHF1F38AsbWVFvgLyyCTF6pwTaR2v5Sj8epn0TIqtHyscJnFW5Hjoa8b_myG70xOiZHSUgGE7NDkel6r0d9CINFm2TPhVy8SpMb_Jmgk3ujD-GmM_sk3cL6UCpQOg-8a6dH8vNngfeyWf_1tItFUPiH1O2BuNhX8p-xM"/>
+</div>
+<button class="absolute bottom-0 right-0 bg-primary text-white p-2 rounded-full shadow-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined text-sm" data-icon="edit">edit</span>
+</button>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Alex Chen</h2>
+<p class="font-body-md text-body-md text-outline">alex.chen@corporate-tech.com</p>
+</section>
+<!-- Stats/Interactions Grid -->
+<section class="grid grid-cols-2 gap-md mb-xl">
+<div class="bg-white p-lg rounded-xl profile-shadow flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary">85%</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Readiness Score</span>
+</div>
+<div class="bg-white p-lg rounded-xl profile-shadow flex flex-col items-center">
+<span class="font-headline-md text-headline-md text-primary">12</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Mock Sessions</span>
+</div>
+</section>
+<!-- Action List -->
+<div class="space-y-sm">
+<!-- Edit Profile Button -->
+<button class="w-full flex items-center justify-between p-lg bg-white rounded-xl profile-shadow hover:bg-blue-50 transition-colors duration-200 group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="person_edit">person_edit</span>
+</div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Edit Profile</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Interview Preferences -->
+<button class="w-full flex items-center justify-between p-lg bg-white rounded-xl profile-shadow hover:bg-blue-50 transition-colors duration-200 group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Interview Preferences</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</button>
+<!-- Notifications -->
+<button class="w-full flex items-center justify-between p-lg bg-white rounded-xl profile-shadow hover:bg-blue-50 transition-colors duration-200 group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Notifications</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-[10px]">2</span>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+<!-- Settings Divider -->
+<div class="py-sm"></div>
+<!-- Logout Button -->
+<button class="w-full flex items-center justify-between p-lg bg-white rounded-xl profile-shadow hover:bg-error-container/20 transition-colors duration-200 group">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</div>
+<span class="font-body-md text-body-md font-semibold text-error">Logout</span>
+</div>
+<span class="material-symbols-outlined text-error/50" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- App Version Anchor -->
+<p class="mt-xl text-center font-label-sm text-label-sm text-outline/50">Version 2.4.0 • Built for Performance</p>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-white/80 backdrop-blur-lg border-t border-slate-100 z-50 rounded-t-2xl shadow-[0_-8px_30px_rgba(37,99,235,0.1)]">
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 hover:text-blue-500 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 hover:text-blue-500 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 hover:text-blue-500 transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 scale-110 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

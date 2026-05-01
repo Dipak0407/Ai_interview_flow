@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interview AI - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container": "#e5eeff",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary-fixed": "#dbe1ff",
+                      "on-tertiary-fixed-variant": "#3f484d",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "surface-container-high": "#dce9ff",
+                      "tertiary-fixed": "#dbe4ea",
+                      "surface-container-highest": "#d3e4fe",
+                      "outline-variant": "#c3c6d7",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "surface": "#f8f9ff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-container": "#e9f2f8",
+                      "on-primary-container": "#eeefff",
+                      "inverse-primary": "#b4c5ff",
+                      "secondary": "#565e74",
+                      "on-background": "#0b1c30",
+                      "on-error-container": "#93000a",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-tint": "#0053db",
+                      "outline": "#737686",
+                      "primary": "#004ac6",
+                      "tertiary": "#4e565b",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#00174b",
+                      "background": "#f8f9ff",
+                      "tertiary-container": "#666f74",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#141d21",
+                      "secondary-fixed": "#dae2fd",
+                      "on-surface": "#0b1c30",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-container-low": "#eff4ff",
+                      "surface-bright": "#f8f9ff",
+                      "on-surface-variant": "#434655",
+                      "secondary-container": "#dae2fd",
+                      "primary-container": "#2563eb",
+                      "inverse-surface": "#213145",
+                      "on-secondary-container": "#5c647a",
+                      "inverse-on-surface": "#eaf1ff",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "surface-dim": "#cbdbf5",
+                      "tertiary-fixed-dim": "#bfc8ce",
+                      "surface-variant": "#d3e4fe"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "sm": "8px",
+                      "gutter": "16px",
+                      "container-margin": "20px",
+                      "xxl": "64px",
+                      "xl": "40px",
+                      "unit": "4px",
+                      "xs": "4px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Manrope"],
+                      "label-md": ["Manrope"],
+                      "headline-md": ["Space Grotesk"],
+                      "display-lg": ["Space Grotesk"],
+                      "body-md": ["Manrope"],
+                      "headline-lg": ["Space Grotesk"],
+                      "label-sm": ["Manrope"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .voice-wave {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            height: 32px;
+        }
+        .wave-bar {
+            width: 3px;
+            background: #004ac6;
+            border-radius: 9999px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen pb-xxl">
+<!-- TopAppBar -->
+<header class="fixed top-0 z-50 w-full bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(37,99,235,0.05)]">
+<div class="flex justify-between items-center w-full px-5 py-4">
+<div class="flex items-center gap-md">
+<button class="active:scale-95 duration-200 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors p-2 rounded-lg">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400" data-icon="menu">menu</span>
+</button>
+<h1 class="font-['Space_Grotesk'] text-xl font-bold tracking-tight text-blue-600 dark:text-blue-400">Interview AI</h1>
+</div>
+<div class="active:scale-95 duration-200">
+<img alt="User profile picture" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="A professional close-up portrait of a friendly young executive with a clean, polished look. The background is a soft-focus corporate office with cool blue and white tones, matching a high-end technological aesthetic. The lighting is bright and even, emphasizing a modern and trustworthy professional persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBny7DlM8_HV-XzrSNBsP_-yfgk8RePxeHlK7tT6UvtgTUMPLcCZbcgpNuDMMSoBr8xHV0x8Q2V1pgrRLAfnr4cffBAxP3HCYOrD7DdnziJTSQj0doABkHkjvaz4xRFF4NWeP6yOoL7RevXhdH1z0qd3EznQ4o_s8W807TkIqSD91uudBoNAytFS8sCxYeYVM6LlH891hYIR_3wlOXqY3cR7ZphUVoDCQI_H-4FpXE_XzCLr5S-NXkfzKYmDkEYp6OpfM8ViDDEzW6U"/>
+</div>
+</div>
+</header>
+<main class="pt-xxl px-container-margin">
+<!-- Hero Greeting -->
+<section class="mt-xl mb-xl text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Hi, ready for your interview?</h2>
+<p class="font-body-md text-body-md text-secondary max-w-[280px] mx-auto">Master your professional pitch with our empathetic AI coach.</p>
+</section>
+<!-- Main Action Card -->
+<section class="relative mb-xl group">
+<div class="bg-white rounded-3xl p-lg shadow-[0_20px_50px_rgba(37,99,235,0.1)] overflow-hidden relative border border-white/40">
+<!-- Voice Visualization Decorative Element -->
+<div class="absolute top-0 right-0 p-lg opacity-20">
+<div class="voice-wave">
+<div class="wave-bar h-4"></div>
+<div class="wave-bar h-8"></div>
+<div class="wave-bar h-6"></div>
+<div class="wave-bar h-10"></div>
+<div class="wave-bar h-5"></div>
+</div>
+</div>
+<div class="relative z-10">
+<div class="bg-primary-container/10 w-12 h-12 rounded-2xl flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="mic" data-weight="fill" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-xs">Live Practice</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">Start a real-time conversational simulation tailored to your role.</p>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-xl shadow-[0_8px_20px_rgba(0,74,198,0.3)] active:scale-95 transition-all duration-200 flex items-center justify-center gap-sm">
+                        Start Interview
+                        <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Abstract Glow -->
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/5 blur-3xl rounded-full"></div>
+</div>
+</section>
+<!-- Bento Quick Access -->
+<section class="grid grid-cols-2 gap-md mb-xl">
+<!-- Categories -->
+<div class="col-span-1 bg-surface-container-low rounded-3xl p-md border border-white/50 shadow-sm active:scale-95 transition-transform">
+<div class="bg-white w-10 h-10 rounded-xl flex items-center justify-center mb-md shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="grid_view">grid_view</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-background">Categories</h4>
+<p class="font-label-sm text-label-sm text-secondary mt-xs">12 Industries</p>
+</div>
+<!-- Profile (Stacked) -->
+<div class="col-span-1 bg-surface-container-low rounded-3xl p-md border border-white/50 shadow-sm active:scale-95 transition-transform flex flex-col justify-between">
+<div>
+<div class="bg-white w-10 h-10 rounded-xl flex items-center justify-center mb-md shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-background">Profile</h4>
+</div>
+<div class="mt-md">
+<div class="h-1.5 w-full bg-white rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full w-3/4"></div>
+</div>
+<p class="font-label-sm text-[10px] text-secondary mt-1 uppercase tracking-tighter">Readiness: 75%</p>
+</div>
+</div>
+<!-- History -->
+<div class="col-span-2 bg-white rounded-3xl p-md border border-white/50 shadow-sm flex items-center justify-between active:scale-95 transition-transform">
+<div class="flex items-center gap-md">
+<div class="bg-surface-container w-12 h-12 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-background">Session History</h4>
+<p class="font-label-sm text-label-sm text-secondary">Review your last 5 sessions</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="mb-xl">
+<h3 class="font-headline-md text-headline-md text-on-background mb-md ml-1">Insights</h3>
+<div class="bg-inverse-surface text-inverse-on-surface rounded-3xl p-lg relative overflow-hidden">
+<div class="flex justify-between items-start mb-lg">
+<div>
+<p class="font-label-sm opacity-70 mb-xs">Confidence Score</p>
+<h5 class="font-display-lg text-display-lg">8.4<span class="text-xl opacity-50 ml-1">/10</span></h5>
+</div>
+<div class="bg-primary-container p-2 rounded-lg">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+<p class="font-body-md opacity-80 border-t border-white/10 pt-md">You're doing better than 82% of candidates in Product Management.</p>
+<!-- Decorative pattern -->
+<div class="absolute right-0 bottom-0 opacity-10 pointer-events-none">
+<img alt="Abstract pattern" data-alt="A sophisticated abstract background featuring flowing, wave-like curves in shades of deep indigo and electric blue. The style is minimalist and digital, with soft gradients that create a sense of depth and movement, fitting a futuristic and high-tech interface theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA924vG4iFnlKAa-Z4DVWj8UkmLm3rnHAiEy0YPtBOE6Bc_EBmDdECZKeG_1xFXt_Jf0t1qgpaJwFH1jvZO3-YcYzyY5VxbiC3YC2MGRL9Fsw4PU-IM9GFek6bYjLr7SdwAIJFCraS37Zte4Fes59os2xYwpWTgQ1uOtIvB7OdFkKLpuY9EvTzx0hZzUT0i-R5W7QxvVAR6ggJf29NTstDanb06Y6PmYEA3UujbgcdcDr0iPXcf09rgJX--ySV3ZMpfRY6lLcdqfdXR"/>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg rounded-t-2xl border-t border-slate-100 dark:border-slate-800 shadow-[0_-8px_30px_rgba(37,99,235,0.1)] flex justify-around items-center px-4 pt-3 pb-6">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 scale-110 transition-transform active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</a>
+<!-- Categories -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 hover:text-blue-500 dark:hover:text-blue-300 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Categories</span>
+</a>
+<!-- History -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 hover:text-blue-500 dark:hover:text-blue-300 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">History</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 opacity-70 hover:text-blue-500 dark:hover:text-blue-300 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

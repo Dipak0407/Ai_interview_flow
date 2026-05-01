@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interview AI - Select Your Interviewer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#e5eeff",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary-fixed": "#dbe4ea",
+                    "surface-container-highest": "#d3e4fe",
+                    "outline-variant": "#c3c6d7",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "surface": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#e9f2f8",
+                    "on-primary-container": "#eeefff",
+                    "inverse-primary": "#b4c5ff",
+                    "secondary": "#565e74",
+                    "on-background": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#131b2e",
+                    "surface-tint": "#0053db",
+                    "outline": "#737686",
+                    "primary": "#004ac6",
+                    "tertiary": "#4e565b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "background": "#f8f9ff",
+                    "tertiary-container": "#666f74",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#141d21",
+                    "secondary-fixed": "#dae2fd",
+                    "on-surface": "#0b1c30",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface-variant": "#434655",
+                    "secondary-container": "#dae2fd",
+                    "primary-container": "#2563eb",
+                    "inverse-surface": "#213145",
+                    "on-secondary-container": "#5c647a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "surface-variant": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "container-margin": "20px",
+                    "xxl": "64px",
+                    "xl": "40px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "body-md": ["Manrope"],
+                    "headline-lg": ["Space Grotesk"],
+                    "label-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.05);
+        }
+        .card-shadow {
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.08);
+        }
+        .glow-button {
+            box-shadow: 0 8px 16px rgba(0, 74, 198, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary/20">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-100 flex justify-between items-center w-full px-5 py-4 shadow-[0_4px_20px_rgba(37,99,235,0.05)]">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-blue-50 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-blue-600" data-icon="menu">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-blue-600 font-['Space_Grotesk']">Interview AI</h1>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full border-2 border-primary/10 overflow-hidden active:scale-95 transition-all duration-200 cursor-pointer">
+<img alt="User profile picture" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a young professional in a light-mode UI context. The subject is well-lit with soft, natural lighting, wearing business-casual attire. The background is a clean, blurred office environment with soft blue and white tones to match the modern corporate aesthetic. The overall mood is approachable, confident, and high-end." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeqgwRtKW7evVR5WNfL4N-UUUEK4o-KSthgt8simO9L_npkfuxzbUZVJXPf5bkT3WHxxPRSebCnmyrsfzAReiHMCxhYfBFOfVN-toAnBmkrwapBxT69aZCxzay0UnU6LeYtzOP6VNTvC4LKbaa3wBdLP0KQUPgOXnbophUNJ4QVBN6_5R2bptRhsxwcs_31hNpfqiCR-jXVHX5ghtyH5nm1fPH5BlGRpKrc-jL3IXOTyezAsheOZnvj_Gx5pElkkVLu7UhxPgOJhBS"/>
+</div>
+</div>
+</header>
+<main class="pt-xxl pb-xxl px-container-margin min-h-screen flex flex-col items-center max-w-4xl mx-auto">
+<!-- Header Section -->
+<section class="mt-xl mb-xl text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-sm">Who will interview you?</h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-md mx-auto">Choose an AI interviewer that best fits your comfort level. Both are trained to provide expert-level feedback.</p>
+</section>
+<!-- Interviewer Selection Grid -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl">
+<!-- Male Interviewer Card -->
+<div class="group relative bg-white rounded-xl p-lg card-shadow hover:translate-y-[-4px] transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary/20">
+<div class="aspect-[4/5] w-full rounded-lg overflow-hidden mb-md bg-surface-container">
+<img alt="Male AI Interviewer" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A hyper-realistic, professional portrait of a male AI interviewer named Marcus. He has a warm, empathetic expression and is wearing a crisp, light blue business shirt in a bright, modern studio setting. The lighting is soft and high-key, creating a clean and supportive atmosphere. The background consists of subtle geometric patterns in soft whites and muted blues to reflect a high-tech yet human-centric AI coaching brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYhJr0HXsV7KLynUYch2GJvUun3VxitzCuO6ZKpVp4pMvKXqAxrfggbcGigdFb9e4SCQ6jRuV_ni4V85ceydxRQpUjPBjCnMObKOXEjR4trbeM2KIU00ajZeZgX8l9g1e-9CKOrbJyj62PnFIHOQEtl_qz75AcM2we437w9h_tvtVYuynXxatdIohVi_SQ9NxYdlYGSN0PNraEVCyMdctvPdd7cruls0UCIGXlhRja7fI3wPB94SPZ0fWUsfq_YYZIZ3UbBPBMdGTb"/>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-md text-label-md text-primary bg-primary/5 px-3 py-1 rounded-full mb-xs">Technical Lead</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Marcus Vance</h3>
+<p class="font-body-md text-body-md text-secondary mt-xs">Focused on analytical depth and structural logic in answers.</p>
+</div>
+<div class="mt-lg">
+<button class="w-full py-md bg-primary text-white rounded-xl font-label-md glow-button active:scale-[0.98] transition-all">
+                        Choose Marcus
+                    </button>
+</div>
+</div>
+<!-- Female Interviewer Card -->
+<div class="group relative bg-white rounded-xl p-lg card-shadow hover:translate-y-[-4px] transition-all duration-300 cursor-pointer border-2 border-transparent hover:border-primary/20">
+<div class="aspect-[4/5] w-full rounded-lg overflow-hidden mb-md bg-surface-container">
+<img alt="Female AI Interviewer" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A hyper-realistic, professional portrait of a female AI interviewer named Elena. She has a professional and encouraging smile, wearing a modern, tailored grey blazer. The setting is a minimalist, bright corporate lounge with large windows letting in diffused white light. The aesthetic is clean, sophisticated, and empathetic, utilizing a palette of soft whites and deep trust blues to create a premium coaching experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiwVr27EXuZXd7lVH64WI0PCjBHj10AfNruJKunao1La1LEkcBieZCWseafUkCx1Z39w67C3xW4DC7l8uibS-9JM4Dn828dyR6Tka0fIlUGHPJ7lsyGyvKHjmHtndp63CZW2PuiVkNs-5z7SsHc51JRRmw5AYXs5zB0aPuheiWrH6Ub2SN_sK8F0N9Kd8GJakdEyJOtDAjEWOffyQTh6XRZGsjFfZ5hP3aLN80f0mrs1pw_ZJDdDiX-8YZn34Mz2YOfXPQa_MNHouJ"/>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-label-md text-label-md text-primary bg-primary/5 px-3 py-1 rounded-full mb-xs">HR Director</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Elena Thorne</h3>
+<p class="font-body-md text-body-md text-secondary mt-xs">Specializes in behavioral patterns and cultural alignment.</p>
+</div>
+<div class="mt-lg">
+<button class="w-full py-md bg-primary text-white rounded-xl font-label-md glow-button active:scale-[0.98] transition-all">
+                        Choose Elena
+                    </button>
+</div>
+</div>
+</div>
+<!-- Supportive Info Section -->
+<section class="w-full grid grid-cols-1 md:grid-cols-3 gap-md mb-xxl">
+<div class="flex items-start gap-md p-md bg-blue-50/50 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+<div>
+<h4 class="font-label-md text-on-background">Adaptive AI</h4>
+<p class="text-label-sm text-secondary">Interviews adjust difficulty based on your performance.</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-md bg-blue-50/50 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="videocam">videocam</span>
+<div>
+<h4 class="font-label-md text-on-background">Live Feedback</h4>
+<p class="text-label-sm text-secondary">Real-time tone and body language analysis included.</p>
+</div>
+</div>
+<div class="flex items-start gap-md p-md bg-blue-50/50 rounded-xl">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+<div>
+<h4 class="font-label-md text-on-background">Private &amp; Secure</h4>
+<p class="text-label-sm text-secondary">Your practice sessions are encrypted and confidential.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-white/80 backdrop-blur-lg rounded-t-2xl border-t border-slate-100 shadow-[0_-8px_30px_rgba(37,99,235,0.1)] z-50">
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 active:scale-90 transition-all duration-150 font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+            Home
+        </a>
+<a class="flex flex-col items-center justify-center text-blue-600 scale-110 transition-transform active:scale-90 duration-150 font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+            Categories
+        </a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 active:scale-90 transition-all duration-150 font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="history">history</span>
+            History
+        </a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 active:scale-90 transition-all duration-150 font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+            Profile
+        </a>
+</nav>
+</body></html>

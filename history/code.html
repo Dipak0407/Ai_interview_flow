@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Interview AI - History</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#e5eeff",
+                    "on-secondary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-container-high": "#dce9ff",
+                    "tertiary-fixed": "#dbe4ea",
+                    "surface-container-highest": "#d3e4fe",
+                    "outline-variant": "#c3c6d7",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "surface": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#e9f2f8",
+                    "on-primary-container": "#eeefff",
+                    "inverse-primary": "#b4c5ff",
+                    "secondary": "#565e74",
+                    "on-background": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#131b2e",
+                    "surface-tint": "#0053db",
+                    "outline": "#737686",
+                    "primary": "#004ac6",
+                    "tertiary": "#4e565b",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "background": "#f8f9ff",
+                    "tertiary-container": "#666f74",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed": "#141d21",
+                    "secondary-fixed": "#dae2fd",
+                    "on-surface": "#0b1c30",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-bright": "#f8f9ff",
+                    "on-surface-variant": "#434655",
+                    "secondary-container": "#dae2fd",
+                    "primary-container": "#2563eb",
+                    "inverse-surface": "#213145",
+                    "on-secondary-container": "#5c647a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "surface-dim": "#cbdbf5",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "surface-variant": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "sm": "8px",
+                    "gutter": "16px",
+                    "container-margin": "20px",
+                    "xxl": "64px",
+                    "xl": "40px",
+                    "unit": "4px",
+                    "xs": "4px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Space Grotesk"],
+                    "display-lg": ["Space Grotesk"],
+                    "body-md": ["Manrope"],
+                    "headline-lg": ["Space Grotesk"],
+                    "label-sm": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 4px 20px rgba(37, 99, 235, 0.05);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.08);
+        }
+        body {
+            background-color: #f8f9ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-100 flex justify-between items-center w-full px-5 py-4 shadow-[0_4px_20px_rgba(37,99,235,0.05)]">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-blue-600 cursor-pointer active:scale-95 transition-transform" data-icon="menu">menu</span>
+<h1 class="text-xl font-bold tracking-tight text-blue-600 font-['Space_Grotesk']">Interview AI</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional studio portrait of a young male professional smiling confidently against a soft, blurred office background. The lighting is bright and high-key, emphasizing a clean and high-end modern corporate aesthetic. The overall color palette features muted blues and crisp whites to align with a sophisticated and tech-forward user interface design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0aUW1_lNQLN9NXUo5MzXTxFSCMZqQoNINZiZ9NR9Nt8wuYITYhKSscOyk4C9p9XGK5b7j_yCphydRftdtJiBbCn63jie_wvS-W5P_GDnqJxRLnIWK2DVqVNrDzbi5jO_rF0DRpEhGvD97-0hB6v6bhHrDbpf-Yx0DzNIVG-rwuEeWBUD5zLnVdazFFbFkRA66Joi4xjUH7XZbXXVThmW4DJNdMRLM6VIOVAXq2xXcMaJIbZfr_WQvel0_k3ljKREkOHe0sjpQDVAl"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-margin max-w-2xl mx-auto">
+<!-- Page Header -->
+<section class="mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">History</h2>
+<p class="text-on-surface-variant font-body-md">Review your past performance and growth trajectory.</p>
+</section>
+<!-- Stats Overview Bento -->
+<section class="grid grid-cols-2 gap-md mb-xl">
+<div class="bg-primary-container p-lg rounded-xl text-white shadow-lg flex flex-col justify-between h-32">
+<span class="material-symbols-outlined text-3xl" data-icon="insights">insights</span>
+<div>
+<p class="text-label-sm uppercase opacity-80">Average Score</p>
+<p class="font-headline-md text-headline-md">8.4<span class="text-body-md opacity-70">/10</span></p>
+</div>
+</div>
+<div class="bg-white p-lg rounded-xl border border-surface-container-high card-shadow flex flex-col justify-between h-32">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="history_edu">history_edu</span>
+<div>
+<p class="text-label-sm text-on-surface-variant uppercase">Sessions</p>
+<p class="font-headline-md text-headline-md text-on-background">24</p>
+</div>
+</div>
+</section>
+<!-- History List -->
+<div class="space-y-md">
+<!-- Item 1 -->
+<div class="bg-white p-lg rounded-xl flex items-center justify-between border border-surface-container-high card-shadow group active:scale-[0.98] transition-all cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="code">code</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg text-on-background">Software Engineering</h3>
+<p class="text-label-sm text-on-surface-variant">Oct 24, 2023 • 14:30 PM</p>
+</div>
+</div>
+<div class="text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container px-3 py-1 rounded-full text-primary font-bold">
+<span>9.2</span>
+<span class="text-[10px] opacity-60">/10</span>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-white p-lg rounded-xl flex items-center justify-between border border-surface-container-high card-shadow group active:scale-[0.98] transition-all cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="palette">palette</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg text-on-background">Product Design</h3>
+<p class="text-label-sm text-on-surface-variant">Oct 21, 2023 • 09:15 AM</p>
+</div>
+</div>
+<div class="text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container px-3 py-1 rounded-full text-primary font-bold">
+<span>7.8</span>
+<span class="text-[10px] opacity-60">/10</span>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-white p-lg rounded-xl flex items-center justify-between border border-surface-container-high card-shadow group active:scale-[0.98] transition-all cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="leaderboard">leaderboard</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg text-on-background">Project Management</h3>
+<p class="text-label-sm text-on-surface-variant">Oct 18, 2023 • 16:45 PM</p>
+</div>
+</div>
+<div class="text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container px-3 py-1 rounded-full text-primary font-bold">
+<span>8.5</span>
+<span class="text-[10px] opacity-60">/10</span>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-white p-lg rounded-xl flex items-center justify-between border border-surface-container-high card-shadow group active:scale-[0.98] transition-all cursor-pointer">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="database">database</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-lg text-on-background">Data Science</h3>
+<p class="text-label-sm text-on-surface-variant">Oct 12, 2023 • 11:00 AM</p>
+</div>
+</div>
+<div class="text-right">
+<div class="inline-flex items-center gap-1 bg-surface-container px-3 py-1 rounded-full text-primary font-bold">
+<span>6.9</span>
+<span class="text-[10px] opacity-60">/10</span>
+</div>
+</div>
+</div>
+<!-- Empty State / Load More -->
+<div class="py-lg flex justify-center">
+<button class="px-xl py-md text-primary font-bold text-label-md border-2 border-primary-fixed rounded-full hover:bg-surface-container transition-colors">
+                    Load More History
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-3 pb-6 bg-white/80 backdrop-blur-lg border-t border-slate-100 z-50 rounded-t-2xl shadow-[0_-8px_30px_rgba(37,99,235,0.1)]">
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 hover:text-blue-500 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 hover:text-blue-500 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Categories</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 scale-110 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">History</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 opacity-70 hover:text-blue-500 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-semibold uppercase tracking-wider mt-1">Profile</span>
+</a>
+</nav>
+</body></html>
