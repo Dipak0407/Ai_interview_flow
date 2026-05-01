@@ -214,7 +214,7 @@
     }
   
 
-    iframe {
+    /* iframe {
       width: var(--phone-w);
       height: var(--phone-h);
       border: none;
@@ -224,7 +224,20 @@
 
     .phone-screen iframe {
       transform: scale(var(--scale, 1));
-    }
+    } */
+
+    iframe {
+  width: 390px;
+  height: 844px;
+  border: none;
+  transform-origin: top left;
+  display: block;
+  background: #ffffff;
+}
+
+.phone-screen iframe {
+  transform: scale(var(--scale, 1));
+}
 
     .focus-view .screens {
       max-width: 1120px;
@@ -348,7 +361,7 @@
     </section>
   </main>
 
-  <script>
+  <!-- <script>
     function setFrameScale() {
       document.querySelectorAll('.phone-screen').forEach(screen => {
         const shellWidth = screen.clientWidth;
@@ -359,6 +372,22 @@
     window.addEventListener('resize', setFrameScale);
     window.addEventListener('load', setFrameScale);
     setFrameScale();
-  </script>
+  </script> -->
+  <script>
+  function setFrameScale() {
+    document.querySelectorAll('.phone-screen').forEach(screen => {
+      const scaleX = screen.clientWidth / 390;
+      const scaleY = screen.clientHeight / 844;
+
+      const scale = Math.max(scaleX, scaleY);
+
+      screen.style.setProperty('--scale', scale);
+    });
+  }
+
+  window.addEventListener('resize', setFrameScale);
+  window.addEventListener('load', setFrameScale);
+  setFrameScale();
+</script>
 </body>
 </html>
